@@ -1,0 +1,124 @@
+
+:root{
+    --primary-dark:rgb(172, 134, 46);
+    --primary:rgb(204, 159, 56);
+    --primary-light:rgb(230, 180, 64);
+    --secondary-dark: rgb(174, 100, 216) ;
+    --secondary: rgb(202 129 243) ;
+    --secondary-light: rgb(220, 159, 255) ;
+    --light: rgb(244, 244, 244) ;
+    --gray: rgb(129, 127, 116) ;
+    --dark: rgb(24, 24, 22) ;
+    --dark-less-opacity: rgba(24, 24, 22, 0.344) ;
+}
+
+*, ::before,::after{
+    box-sizing: border-box;
+}
+.form-anim h2 strong{
+    color: var(--primary);
+}
+.form-anim h2{
+    color: var(--gray);
+    text-shadow: -2px 2px 0 var(--dark),
+                    2px -2px 0 var(--dark),
+                    -2px -2px 0 var(--dark),
+                    2px 2px 0 var(--dark);
+    line-height: 2.2rem;
+}
+
+.form-anim .form-group label{
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    color: var(--gray);
+    transition: 0.4s ease-out;
+    font-size: 2rem;
+}
+
+.form-anim .form-group input{
+    display: block;
+    width: 100%;
+    padding: 10px 0px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 3px solid var(--gray);
+    color: var(--gray);
+    font-size: 2rem;
+    transition: 0.4s ease-out;
+}
+.form-group:nth-last-child(2) {
+    margin-bottom: 2vh;
+    justify-content: center;
+}
+
+.form-anim .form-group{
+    position: relative;
+    display: flex;
+    margin-bottom: 40px;
+}
+.form-anim .form-group input[type="submit"]{
+    display: block;
+    width: auto;
+    padding: 15px 60px;
+    border: 3px solid var(--secondary);
+    border-radius: 999px;
+    background-image: linear-gradient(to right, transparent 50%, var(--secondary) 50%, var(--secondary-dark));
+    background-size: 200%;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.form-anim .form-group input[type="submit"]:hover {
+    color: var(--primary-dark);
+    background-position: 100%;
+    border: 3px solid var(--light);
+}
+
+.form-anim .link-form a {
+    margin-left: 2vw;
+    font-size: 1.5rem;
+    border-bottom: 2px solid  transparent;
+}
+.form-anim .link-form a:hover{
+    border-bottom-color: var(--primary) ;
+}
+.form-anim fieldset {
+    padding-top: 2rem;
+}
+
+/* animation */
+.form-anim .form-group:focus-within label,
+.form-anim .form-group.animation label{
+    top: 0px;
+    transform: translateY(-100%);
+    color: var(--primary);
+    font-size: 2rem;
+}
+.form-anim .form-group:focus-within input,
+.form-anim .form-group.animation input{
+    border-color: var(--primary);
+}
+
+datalist {
+    position: absolute;
+    max-height: 20em;
+    border: 0 none;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  datalist option {
+    font-size: 0.8em;
+    padding: 0.3em 1em;
+    background-color: tomato;
+    cursor: pointer;
+  }
+  
+  datalist option:hover, datalist option:focus {
+    color: #fff;
+    background-color: #036;
+    outline: 0 none;
+  }

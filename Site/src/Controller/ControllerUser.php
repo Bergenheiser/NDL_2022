@@ -11,9 +11,18 @@ class ControllerUser extends GenericController
     }
 
     public static function honey() {
+        // TODO
+
         self::afficheVue([
             "pagetitle" => "HoneyPot !",
-            "cheminVueBody" => "user/welcome.php",
+            "cheminVueBody" => "user/honey.php",
+        ]);
+    }
+
+    public static function formSubmit() {
+        self::afficheVue([
+            "pagetitle" => "Submit !",
+            "cheminVueBody" => "user/formSubmit.php",
         ]);
     }
 

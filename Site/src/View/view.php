@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/CSS/style.css" />
+    <!--
+    <link rel="stylesheet" href="../assets/CSS/submit.css">
+    -->
+
     <title><?php echo $pagetitle; ?></title>
 </head>
 
@@ -11,6 +15,7 @@
     <nav>
         <a href="index.php?action=welcome"> Home </a>
         <a href="index.php?action=honey"> HoneyPot </a>
+        <a href="index.php?action=formSubmit"> Form </a>
     </nav>
 </header>
 <main>

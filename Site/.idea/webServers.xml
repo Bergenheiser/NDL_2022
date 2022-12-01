@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7a30fe90-90c7-410d-80ed-812fcf6edeef" name="nuitInfo" url="http://164.92.245.56">
+        <fileTransfer rootFolder="/var/www/html" accessType="SFTP" host="164.92.245.56" port="22" sshConfigId="1147d3ce-53b9-4913-a637-2d0f6f577271" sshConfig="root@164.92.245.56:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

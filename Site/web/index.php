@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . "/../src/Controller/GenericController.php";
-require_once __DIR__ . "/../src/Controller/ControllerUser.php";
+require_once "../src/Controller/GenericController.php";
+require_once "../src/Controller/ControllerUser.php";
 
 $action = $_GET['action'] ?? "welcome";
 
@@ -12,8 +12,7 @@ $controllerClassName = "Controller" . ucfirst($controller);
 
 if (class_exists($controllerClassName)) {
     if (in_array($action,get_class_methods($controllerClassName))){
-        ControllerUser::welcome();
-        // $controllerClassName::$action();
+        $controllerClassName::$action();
     } else {
         GenericController::error("Action inconnu !!");
     }
