@@ -9,14 +9,13 @@
 <body>
 <header>
     <nav>
-        <a href="?action=BDD"> BDD </a>
-        <a href="?action=chat"> Chat </a>
+        <a href="?action=welcome"> Home </a>
+        <a href="?action=honey"> HoneyPot </a>
     </nav>
 </header>
 <main>
     <?php
-    echo "bonsoir";
-        // require __DIR__ . "/{$cheminVueBody}";
+        require __DIR__ . "/{$cheminVueBody}";
     ?>
 </main>
 <footer>

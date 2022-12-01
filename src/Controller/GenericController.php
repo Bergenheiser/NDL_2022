@@ -3,7 +3,8 @@
 class GenericController
 {
 
-    public static function afficheVue(array $parametres = []): void {
+    public static function afficheVue(array $parametres = []): void
+    {
         extract($parametres); // Crée des variables à partir du tableau $parametres
         require "../src/View/view.php"; // Charge la vue
     }

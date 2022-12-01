@@ -1,5 +1,5 @@
 <section>
-    <p></p>
+    <p>Welcome to the web site !!</p>
 
 
 
