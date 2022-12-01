@@ -9,8 +9,8 @@
 <body>
 <header>
     <nav>
-        <a href="?action=welcome"> Home </a>
-        <a href="?action=honey"> HoneyPot </a>
+        <a href="index.php?action=welcome"> Home </a>
+        <a href="index.php?action=honey"> HoneyPot </a>
     </nav>
 </header>
 <main>
