@@ -39,7 +39,7 @@
                 <option>Inconnue</option>
             </datalist>
         </div>
-        <div class="form-group"><input type="submit" disabled></div>
+        <div class="form-group"><input disabled type="submit"></div>
     </fieldset>
 </form>
 <script src="../../../assets/JS/formSys.js"></script>

@@ -40,11 +40,41 @@ class ControllerUser extends GenericController
         ]);
     }
 
+
     public static function qCard() {
-        self::afficheVue([
-            "pagetitle" => "Questionnaire !",
-            "cheminVueBody" => "user/qCard.php",
-        ]);
+        if (isset($_GET['lvl'])) {
+            if (isset($_GET['confirm'])) {
+                if (isset($_GET['id'])) {
+                    $reponses = ModelReponse::select($_GET['id']);
+                    if ($reponses->get('valide') == 1) {
+                        MessageFlash::ajouter("success", "Bonne réponse !!");
+                        header("Location: index.php?action=qCard&lvl=" . ($_GET['lvl'])+1);
+                    } else {
+                        MessageFlash::ajouter("danger", "Mauvaise réponse !!");
+                        header("Location: index.php?action=qCard&lvl=1");
+                    }
+                } else {
+                    header("Location: index.php?action=qCard&lvl=1");
+                }
+            } else {
+                $qestion = ModelQuestion::select($_GET['lvl']);
+                $reponses = ModelReponse::findReponses($qestion->get("idQuestion"));
+
+                self::afficheVue([
+                    "pagetitle" => "Questionnaire !",
+                    "question1" => $qestion,
+                    "reponse1" => $reponses[0],
+                    "reponse2" => $reponses[1],
+                    "reponse3" => $reponses[2],
+                    "cheminVueBody" => "user/qCard.php",
+                ]);
+            }
+
+
+        } else {
+            header("Location: index.php?action=qCard&lvl=1");
+        }
+
     }
 
     public static function aPropos() {
@@ -89,11 +119,5 @@ class ControllerUser extends GenericController
     }
 
 
-    public static function testRep() {
-        var_dump(ModelQuestion::select("azer2"));
-        echo "<br>";
-        var_dump(ModelReponse::select("azer"));
-
-    }
 
 }

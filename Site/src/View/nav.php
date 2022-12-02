@@ -34,14 +34,13 @@
                     </button>
                 </div>
                 <div class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-12">
-                    <a href="#" class="font-semibold text-gray-900 hover:text-red-600">Product</a>
+                    <a href="index.php?action=login" class="font-semibold text-gray-900 hover:text-red-600">AdminLogin</a>
 
-                    <a href="#" class="font-semibold text-gray-900 hover:text-red-600">Features</a>
+                    <a href="index.php?action=formSubmit" class="font-semibold text-gray-900 hover:text-red-600">Game</a>
 
                     <a href="index.php?action=detente" class="font-semibold text-gray-900 hover:text-red-600">Espace détente</a>
 
-                    <a href="index.php?action=aPropos" class="font-semibold text-gray-900 hover:text-red-600">A
-                        propos</a>
+                    <a href="index.php?action=aPropos" class="font-semibold text-gray-900 hover:text-red-600">A propos</a>
                 </div>
             </nav>
         </div>

@@ -1,24 +1,23 @@
 <?php
 
 require_once __DIR__ . "/DataBaseConnection.php";
+require_once __DIR__ . "/ModelReponse.php";
 
 use PDOException;
 
 class ModelQuestion
 {
 
-    private string $idQuestion;
+    private int $idQuestion;
     private string $titreQuestion;
     private string $texteQuestion;
-    private string $idReponse;
 
     // un constructeur
-    public function __construct(string $idQuestion, string $titreQuestion, string $texteQuestion, string $idReponse)
+    public function __construct(int $idQuestion, string $titreQuestion, string $texteQuestion)
     {
         $this->idQuestion = $idQuestion;
         $this->titreQuestion = $titreQuestion;
         $this->texteQuestion = $texteQuestion;
-        $this->idReponse = $idReponse;
     }
 
     private static function construire(array $userFormatTableau)
@@ -26,8 +25,7 @@ class ModelQuestion
         $idQuestion = $userFormatTableau['idQuestion'];
         $titreQuestion = $userFormatTableau['titreQuestion'];
         $texteQuestion = $userFormatTableau['texteQuestion'];
-        $idReponse = $userFormatTableau['idReponse'];
-        return new static ($idQuestion, $titreQuestion, $texteQuestion, $idReponse);
+        return new static ($idQuestion, $titreQuestion, $texteQuestion);
     }
 
 
@@ -48,7 +46,7 @@ class ModelQuestion
 
     }
 
-    public static function select(string $idQuestion)
+    public static function select(int $idQuestion)
     {
         try {
             $pdo = DataBaseConnection::getPdo();
@@ -62,6 +60,7 @@ class ModelQuestion
             }
             return static::construire($user);
         } catch (PDOException $e) {
+            echo $e->getMessage();
             return null;
         }
 
@@ -78,5 +77,7 @@ class ModelQuestion
             $this->$nom_attribut = $valeur;
         return false;
     }
+
+
 
 }

@@ -7,24 +7,27 @@ use PDOException;
 class ModelReponse
 {
 
-    private string $idReponse;
-    private string $titreReponse;
+    private int $idReponse;
     private string $texteReponse;
+    private int $valide;
+    private int $idQuestion;
 
     // un constructeur
-    public function __construct(string $idReponse, string $titreReponse, string $texteReponse)
+    public function __construct(int $idReponse, string $texteReponse, int $valide, int $idQuestion)
     {
         $this->idReponse = $idReponse;
-        $this->titreReponse = $titreReponse;
         $this->texteReponse = $texteReponse;
+        $this->valide = $valide;
+        $this->idQuestion = $idQuestion;
     }
 
-    private static function construire(array $userFormatTableau)
+    public static function construire(array $userFormatTableau)
     {
         $idReponse = $userFormatTableau['idReponse'];
-        $titreReponse = $userFormatTableau['titreReponse'];
         $texteReponse = $userFormatTableau['texteReponse'];
-        return new static ($idReponse, $titreReponse, $texteReponse);
+        $valide = $userFormatTableau['valide'];
+        $idQuestion = $userFormatTableau['idQuestion'];
+        return new static ($idReponse, $texteReponse, $valide, $idQuestion);
     }
 
     public static function selectAll(): array
@@ -44,7 +47,7 @@ class ModelReponse
 
     }
 
-    public static function select(string $idReponse)
+    public static function select(int $idReponse)
     {
         try {
             $pdo = DataBaseConnection::getPdo();
@@ -73,6 +76,26 @@ class ModelReponse
         if (property_exists($this, $nom_attribut))
             $this->$nom_attribut = $valeur;
         return false;
+    }
+
+    public static function findReponses(int $idTrajet) : array {
+        try {
+            $pdo = DatabaseConnection::getPdo();
+            $sql = "SELECT *
+                    FROM reponse
+                    WHERE idQuestion = :id;";
+            $rep = $pdo->prepare($sql);
+            $rep->execute(array (
+                "id" => $idTrajet,
+            ));
+            $tab = array();
+            foreach ($rep as $tabFormatTrajet) {
+                $tab[] = ModelReponse::construire($tabFormatTrajet);
+            }
+            return $tab;
+        } catch (PDOException) {
+            return [];
+        }
     }
 
 }

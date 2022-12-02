@@ -2,21 +2,22 @@ const inputs = document.querySelectorAll('input');
 const formGroups = document.querySelectorAll(".form-group")
 const progressbar = document.querySelector('progress');
 let contentInputs = {}; 
-
-
-progressbar.max = inputs.length - 1;
+console.log(inputs)
+progressbar.max = formGroups.length - 1;
 
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+let input
 document.addEventListener('DOMContentLoaded', (e) => {
-  inputs.forEach(input => {
+  formGroups.forEach(inputContainer => {
+    input = inputContainer.querySelector('input');
     if(input.value != ""){
       input.parentNode.classList.add('animation');
     }else if(input.value == ""){
       input.parentNode.classList.remove('animation');
     }
   })
-  for (let i = 0; i < inputs.length-1; i++) {
-    let input = inputs[i]
+  for (let i = 0; i < formGroups.length-1; i++) {
+    input = formGroups[i].querySelector('input');
     if (input.value != '') {
       contentInputs[i] = true;
       progressbar.value += 1;
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     }
   }
 })
-for (let i = 0; i < inputs.length; i++){
+for (let i = 0; i < inputs.length - 1; i++){
   let field = inputs[i];
   field.addEventListener('input', (e) => {
     if(e.target.value != ""){
@@ -52,7 +53,7 @@ for (let i = 0; i < formGroups.length-1; i++) {
           if(contentInputs[i] == false){
             console.log('change bar')
             contentInputs[i] = true;
-            formGroup.querySelector('.err').innerHTML = "";
+            formGroup.querySelector('.err').innerHTML = null;
             progressbar.value += 1;
             inDataList = true;
           }
@@ -72,7 +73,6 @@ for (let i = 0; i < formGroups.length-1; i++) {
         if(contentInputs[i] == false){
           contentInputs[i] = true;
           progressbar.value += 1;
-          formGroup.querySelector('.err').innerHTML = "";
         }
       }else if(contentInputs[i] == true && emailRegex.test(formGroup.querySelector('input[type="email"]')) == false){
         console.log(formGroup.querySelector('input').value)
@@ -82,12 +82,14 @@ for (let i = 0; i < formGroups.length-1; i++) {
       if(formGroup.querySelector('input[type="email"]').value != '' && emailRegex.test(formGroup.querySelector('input[type="email"]').value) === false){
         formGroup.querySelector('.err').innerHTML = "Le format email est requis";
         
+      }else{
+        formGroup.querySelector('.err').innerHTML = null;
       }
     }
     else if (formGroup.querySelector('input').value != '' && contentInputs[i] == false) {
         contentInputs[i] = true;
         progressbar.value += 1;
-        formGroup.querySelector('.err').innerHTML = "";
+        formGroup.querySelector('.err').innerHTML = null;
     }else if (contentInputs[i] == true) {
       if(formGroup.querySelector('input').value == ''){
         console.log(formGroup.querySelector('input').value)
@@ -97,12 +99,15 @@ for (let i = 0; i < formGroups.length-1; i++) {
     }
   })
 }
-formGroups[formGroups.length-1].querySelector('input').addEventListener('mouseenter', (event) => {
+sub = document.querySelector('input[type="submit"]');
+window.setInterval(()=> {
+
   if(progressbar.value == progressbar.max){
-    formGroups[formGroups.length-1].querySelector('input').disabled = false;
-    formGroups[formGroups.length-1].querySelector('input').style.backgroundImage = "";
+    sub.disabled = false;
+    sub.style.backgroundImage = "";
   }else{
-    formGroups[formGroups.length-1].querySelector('input').style.backgroundImage = "linear-gradient(to right, transparent 50%, var(--dark) 50%, var(--dark-less-opacity))";
-    formGroups[formGroups.length-1].querySelector('input').disabled = true;
+    sub.disabled = true;
+    sub.style.backgroundImage = "linear-gradient(to right, transparent 50%, var(--dark) 50%, var(--dark-less-opacity))";
   }
-})
+}, 1500);
+

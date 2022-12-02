@@ -206,3 +206,37 @@ progress[value]::-webkit-progress-value::before {
 @keyframes animate-stripes {
     100% {background-position: -100px 0px; }
 }
+
+/* Message Flash */
+.alert {
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-top: 3%;
+}
+
+.alert-success {
+    background-color: #269428;
+    color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.alert-info {
+    background-color: #3490bd;
+    color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+.alert-warning {
+    background-color: #c49441;
+    color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+.alert-danger {
+    background-color: #de1713;
+    color: #f2dede;
+    border-color: #ebccd1;
+}

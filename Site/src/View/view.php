@@ -5,9 +5,6 @@
     <link rel="stylesheet" href="../../assets/CSS/style.css" />
     <link rel="stylesheet" href="../../assets/CSS/styleQCard.css"/>
     <link rel="stylesheet" href="../../assets/CSS/button.css"/>
-    <!--
-    <link rel="stylesheet" href="../assets/CSS/submit.css">
-    -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 
     <title><?php echo $pagetitle; ?></title>
