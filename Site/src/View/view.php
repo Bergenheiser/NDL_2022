@@ -6,19 +6,18 @@
     <!--
     <link rel="stylesheet" href="../assets/CSS/submit.css">
     -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 
     <title><?php echo $pagetitle; ?></title>
 </head>
 
-<body>
+<body class="w-full h-full">
 <header>
     <nav>
-        <a href="index.php?action=welcome"> Home </a>
-        <a href="index.php?action=honey"> HoneyPot </a>
-        <a href="index.php?action=formSubmit"> Form </a>
+        <?php require __DIR__. "/nav.php"; ?>
     </nav>
 </header>
-<main>
+<main class="w-full">
     <?php
         require __DIR__ . "/{$cheminVueBody}";
     ?>
