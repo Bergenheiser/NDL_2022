@@ -1,0 +1,83 @@
+#load2{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    position: absolute;
+    top:0%;
+    left: 0%;
+    background-color: white;
+    gap: 20px;
+    display: none;
+}
+
+.point1{
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 100px;
+    background-color: black;
+}
+
+
+#load2 div{
+    animation: load2 0.9s infinite alternate;
+}
+
+#load2 div:nth-child(2){
+    animation-delay: 0.3s;
+
+}
+
+#load2 div:nth-child(3){
+    animation-delay: 0.6s;
+
+}
+@keyframes load2 {
+    0%{
+        opacity: 0;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        background-color: #f95959;
+    }
+
+    100%{
+        opacity: 1;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        background-color: #a2a8d3;
+    }
+}
+
+.point2{
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 100px;
+    background-color: black;
+}
+
+
+
+.point3{
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 100px;
+    background-color: black;
+}
+
+.button input{
+    width: 10vw;
+    height: 5vh;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: bold;
+    transition-duration: 0.5s;
+}

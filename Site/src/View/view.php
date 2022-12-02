@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../assets/CSS/style.css" />
     <link rel="stylesheet" href="../../assets/CSS/styleQCard.css"/>
+    <link rel="stylesheet" href="../../assets/CSS/button.css"/>
     <!--
     <link rel="stylesheet" href="../assets/CSS/submit.css">
     -->
@@ -19,6 +20,11 @@
     </nav>
 </header>
 <main class="w-full h-full">
+    <div id="load2">
+        <div class="point1"></div>
+        <div class="point2"></div>
+        <div class="point3"></div>
+    </div>
     <?php
         require __DIR__ . "/{$cheminVueBody}";
     ?>

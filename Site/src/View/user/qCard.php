@@ -1,36 +1,39 @@
 <div class="mt-5">
-    <div class="bg-fixed"></div>
     <div class="container_QCard">
         <div class="container_section">
             <h4>Scène 1</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Exercitationem sint esse architecto excepturi culpa quasi
-                fugiat ratione error corrupti quis, natus dolore iusto quam,
-                aut voluptate neque quo dolorum impedit.
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Placeat magnam, ad esse quia nihil odit dolorum impedit beatae
-                eius iure nemo laudantium, harum reiciendis similique tempora error
-                blanditiis, ullam laborum!
+            <p><?php echo "$question1"; ?></p>
             </p>
         </div>
 
         <div class="container_answer">
             <div class="div_answer">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum illum molestias quaerat possimus culpa. Cumque,
+                <a href="index.php?action=jeu&id=r1" class="button"></a>
+                <p><?php echo "$reponse1"; ?>
                 </p>
             </div>
             <div class="div_answer">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum illum molestias quaerat possimus culpa. Cumque,
+                <a href="index.php?action=jeu&id=r2" class="button"></a>
+                <p><?php echo "$reponse2"; ?>
                 </p>
             </div>
             <div class="div_answer">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum illum molestias quaerat possimus culpa.
+                <a href="index.php?action=jeu&id=r3" class="button"></a>
+                <p><?php echo "$reponse3"; ?>
+                </p>
+            </div>
+            <script>
+                const loader2 = document.getElementById("load2");
 
-                </p>
-            </div>
+                document.addEventListener('DOMContentLoaded', () => {
+
+                    loader2.style.display = "flex";
+                    setTimeout(function () {
+                        loader2.style.display = "none";
+                    }, 1000);
+
+                });
+            </script>
         </div>
     </div>
 </div>
