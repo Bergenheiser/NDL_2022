@@ -12,7 +12,7 @@
             </div>
             <div>
                 <h1 class="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">Know your way</h1>
-                <p class="mt-6 text-xl text-gray-600 sm:text-center sm:text-2xl">Une application qui vous permet de vous renseignez sur les enjeux et responsabilités de la sexualité de manière ludique et interactive.</p>
+                <p class="mt-6 text-xl text-gray-600 sm:text-center sm:text-2xl">Une application qui vous permet de vous découvrir de manière ludique et interactive dans la santé sexuelle.</p>
                 <img class="ml-12" src="../../../assets/Images/aPropos.jpg">
                 <div class="mt-8 flex gap-x-4 sm:justify-center">
                     <a href="#"
