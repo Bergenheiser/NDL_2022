@@ -1,10 +1,10 @@
 
 :root{
     --primary-dark:rgb(172, 134, 46);
-    --primary:rgb(204, 159, 56);
+    --primary:#ca3933;
     --primary-light:rgb(230, 180, 64);
     --secondary-dark: rgb(174, 100, 216) ;
-    --secondary: rgb(202 129 243) ;
+    --secondary: #ca3933 ;
     --secondary-light: rgb(220, 159, 255) ;
     --light: rgb(244, 244, 244) ;
     --gray: rgb(129, 127, 116) ;
@@ -73,7 +73,7 @@
     margin-bottom: 1vh;
 }
 .form-anim .form-group input[type="submit"]{
-    color: black;
+    color: #ca3933;
     display: block;
     width: auto;
     padding: 15px 60px;
@@ -85,7 +85,7 @@
     cursor: pointer;
 }
 .form-anim .form-group input[type="submit"]:hover {
-    color: black;
+    color: white;
     background-position: 100%;
     border: 3px solid var(--light);
 }
