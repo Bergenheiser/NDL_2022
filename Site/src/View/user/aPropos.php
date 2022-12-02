@@ -1,19 +1,7 @@
 <div class="relative px-6 lg:px-8">
     <div class="mx-auto max-w-3xl pt-10 pb-32 sm:pt-48 sm:pb-40">
         <div>
-            <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-                <div class="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              <span class="text-gray-600 font-bold">
-                Mon voyage intéractif <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0"
-                                                                                              aria-hidden="true"></span>Démarrer mon questionnaire <span
-                              aria-hidden="true">&rarr;</span></a>
-              </span>
-                </div>
-            </div>
-            <div class="items-center">
-                <h1 class="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">Know your way</h1>
-                <p class="mt-6 text-xl text-gray-600 sm:text-center sm:text-2xl">Une application qui vous permet de vous découvrir de manière ludique et interactive dans la santé sexuelle.</p>
-            </div>
+            <img src="../../../assets/Images/aPropos.jpg" alt="aPropos" class="w-full h-full">
             <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
                 <svg class="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem]"
                      viewBox="0 0 1155 678" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,5 +19,3 @@
         </div>
     </div>
 </div>
-
-

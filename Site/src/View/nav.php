@@ -35,7 +35,7 @@
 
                     <a href="#" class="font-semibold text-gray-900 hover:text-gray-900">Marketplace</a>
 
-                    <a href="#" class="font-semibold text-gray-900 hover:text-gray-900">Company</a>
+                    <a href="index.php?action=aPropos" class="font-semibold text-gray-900 hover:text-gray-900">A propos</a>
                 </div>
             </nav>
         </div>
