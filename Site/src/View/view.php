@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../assets/CSS/style.css" />
+    <link rel="stylesheet" href="../../assets/CSS/style.css" />
+    <link rel="stylesheet" href="../../assets/CSS/styleQCard.css"/>
     <!--
     <link rel="stylesheet" href="../assets/CSS/submit.css">
     -->

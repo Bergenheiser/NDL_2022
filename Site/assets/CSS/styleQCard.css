@@ -1,0 +1,52 @@
+
+
+.container_QCard {
+    /* background-color: bisque; */
+    background-image: url("../images/background.png");
+    width: auto;
+}
+
+.container_section {
+    margin: 0 auto;
+    margin-bottom: 4%;
+    width: 40%;
+    background-color: #FFEFE8;;
+    border-radius: 3px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15pt;
+    box-shadow: 2.5px 2.5px 8px black;
+    /* color: #FFFCF1; */
+    color: #000000;
+}
+
+
+
+h4 {
+    text-align: center;
+}
+
+p {
+    margin: 10pt;
+    text-align: justify;
+    text-justify: auto;
+}
+
+.container_answer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+
+}
+
+.div_answer {
+    width: 30%;
+    margin: 30px;
+    background-color: #FFEFE8;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 2px 2.5px 8px black;
+    color: #000000;
+
+}

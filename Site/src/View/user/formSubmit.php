@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/public/CSS/style.css">
-<form action="" method="post" class="form-anim">
+<form action="index.php?action=qCard" method="post" class="form-anim">
     <fieldset>
         <progress max="100" value="0">0%</progress>
         <div class="form-group"><label for="pseudo">Pseudo* <span class="err"></span></label> <input type="pseudo"
@@ -40,7 +40,6 @@
             </datalist>
         </div>
         <div class="form-group"><input type="submit" disabled></div>
-
     </fieldset>
 </form>
 <script src="../../../assets/JS/formSys.js"></script>

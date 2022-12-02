@@ -37,6 +37,13 @@ class ControllerUser extends GenericController
         ]);
     }
 
+    public static function qCard() {
+        self::afficheVue([
+            "pagetitle" => "Questionnaire !",
+            "cheminVueBody" => "user/qCard.php",
+        ]);
+    }
+
     public static function aPropos() {
         self::afficheVue([
             "pagetitle" => "A Propos !",
