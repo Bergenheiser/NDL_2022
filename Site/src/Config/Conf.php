@@ -10,7 +10,7 @@ class Conf
 
     public static function getDatabase() : string
     {
-        return "MyBDD";
+        return "bdd";
     }
 
     public static function getLogin() : string
@@ -20,6 +20,6 @@ class Conf
 
     public static function getPassword() : string
     {
-        return "password";
+        return "";
     }
 }

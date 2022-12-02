@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . "/ModelUser.php";
+
 class ControllerUser extends GenericController
 {
 
@@ -13,8 +15,10 @@ class ControllerUser extends GenericController
     public static function honey() {
         // TODO
 
+
         self::afficheVue([
             "pagetitle" => "HoneyPot !",
+            //"users" => ModelUser::selectAll(),
             "cheminVueBody" => "user/honey.php",
         ]);
     }
