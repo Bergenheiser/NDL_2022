@@ -38,7 +38,7 @@
 
                     <a href="#" class="font-semibold text-gray-900 hover:text-gray-900">Features</a>
 
-                    <a href="#" class="font-semibold text-gray-900 hover:text-gray-900">Marketplace</a>
+                    <a href="index.php?action=detente" class="font-semibold text-gray-900 hover:text-gray-900">Espace détente</a>
 
                     <a href="index.php?action=aPropos" class="font-semibold text-gray-900 hover:text-gray-900">A
                         propos</a>

@@ -22,6 +22,13 @@ class ControllerUser extends GenericController
         ]);
     }
 
+    public static function detente(){
+        self::afficheVue([
+            "pagetitle" => "Detente !",
+            "cheminVueBody" => "user/detente.php",
+        ]);
+    }
+
     public static function formSubmit() {
         self::afficheVue([
             "pagetitle" => "Submit !",
