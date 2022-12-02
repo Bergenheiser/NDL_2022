@@ -4,6 +4,8 @@
 
 Le site ***Know your way*** vise à sensibiliser les jeunes adultes (mais aussi les plus âgés) aux problématiques liées à la santé sexuelle de façon ludique.
 
+Addresse publique du site web : http://164.92.245.56/
+
 ## Table des matières
  - [Table des matières](#table-des-matières)
  - [Technologies utilisées](#technologies-utilisées)
