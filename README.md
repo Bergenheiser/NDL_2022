@@ -15,7 +15,8 @@ Le site ***Know your way*** vise à sensibiliser les jeunes adultes (mais aussi 
 - HTML
 - CSS
 - JS
-- Tailwing css
+- PHP
+- Tailwind css
 
 ## Contributeurs
 
