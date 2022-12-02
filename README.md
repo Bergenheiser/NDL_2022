@@ -1,8 +1,6 @@
 # --help
-
 ## Know your way
 
-***
 
 Le site ***Know your way*** vise à sensibiliser les jeunes adultes (mais aussi les plus âgés) aux problématiques liées à la santé sexuelle de façon ludique.
 
