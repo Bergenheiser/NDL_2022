@@ -145,7 +145,11 @@ datalist {
     
 }
 
+::-webkit-progress-value {
+    transition: width 1s;
+}
 progress[value] {
+    transition: width 1s;
     margin-bottom: 2.3rem;
     -webkit-appearance: none;
     appearance: none;

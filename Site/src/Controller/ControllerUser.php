@@ -1,8 +1,10 @@
 <?php
 
 require_once __DIR__ . "/../Lib/MotDePasse.php";
-require_once __DIR__ . "/../Lib/MessageFlash.php";
 require_once __DIR__ . "/../Model/ModelUser.php";
+require_once __DIR__ . "/../Model/ModelReponse.php";
+require_once __DIR__ . "/../Model/ModelQuestion.php";
+
 
 class ControllerUser extends GenericController
 {
@@ -64,16 +66,25 @@ class ControllerUser extends GenericController
             $hash = ModelUser::getHashMdp($_GET['login']);
             if ($hash && MotDePasse::verifier($_GET['mdp'], $hash)) {
                 ConnexionUtilisateur::connecter($_GET['login']);
-                MessageFlash::ajouter("success", "Vous etes bien connecté !");
                 // header("Location: index.php?action=read&controller=user&login=" . rawurlencode($_GET['login']));
             } else {
-                MessageFlash::ajouter("warning", "Mauvais mot de passe ou login !");
+                self::afficheVue([
+                    "pagetitle" => "Fail Login",
+                    "login" => $_GET['login'],
+                    "cheminVueBody" => "user/failLogin.php",
+                ]);
                 // header("Location: frontController.php?action=login&controller=user");
             }
         } else {
-            MessageFlash::ajouter("danger", "Il manque le login et/ou le mdp !");
-            // header("Location: frontController.php?action=login&controller=user");
+            header("Location: index.php");
         }
+    }
+
+    public static function testRep() {
+        var_dump(ModelQuestion::select("azer2"));
+        echo "<br>";
+        var_dump(ModelReponse::select("azer"));
+
     }
 
 }
