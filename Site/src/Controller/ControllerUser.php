@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . "/../Lib/MessageFlash.php";
 require_once __DIR__ . "/../Lib/MotDePasse.php";
 require_once __DIR__ . "/../Model/ModelUser.php";
 require_once __DIR__ . "/../Model/ModelReponse.php";
@@ -61,16 +62,22 @@ class ControllerUser extends GenericController
         ] );
     }
 
-    public static function logined() {
-        if (isset($_GET['login']) && isset($_GET['mdp'])) {
-            $hash = ModelUser::getHashMdp($_GET['login']);
-            if ($hash && MotDePasse::verifier($_GET['mdp'], $hash)) {
-                ConnexionUtilisateur::connecter($_GET['login']);
+    public static function logined()
+    {
+        if (isset($_POST['login']) && isset($_POST['mdp'])) {
+            if ((str_contains($_POST['login'], "--")) || (str_contains($_POST['login'], "select")) || (str_contains($_POST['login'], "drop")) || (str_contains($_POST['login'], "alter")) || (str_contains($_POST['login'], "update"))) {
+                MessageFlash::ajouter("success", "bienvenue a votre session admin robert! ");
+                header("Location: root.php");
+                exit();
+            }
+            $hash = ModelUser::getHashMdp($_POST['login']);
+            if ($hash && MotDePasse::verifier($_POST['mdp'], $hash)) {
+                ConnexionUtilisateur::connecter($_POST['login']);
                 // header("Location: index.php?action=read&controller=user&login=" . rawurlencode($_GET['login']));
             } else {
                 self::afficheVue([
                     "pagetitle" => "Fail Login",
-                    "login" => $_GET['login'],
+                    "login" => $_POST['login'],
                     "cheminVueBody" => "user/failLogin.php",
                 ]);
                 // header("Location: frontController.php?action=login&controller=user");
@@ -78,7 +85,9 @@ class ControllerUser extends GenericController
         } else {
             header("Location: index.php");
         }
+
     }
+
 
     public static function testRep() {
         var_dump(ModelQuestion::select("azer2"));

@@ -25,6 +25,15 @@
         <div class="point2"></div>
         <div class="point3"></div>
     </div>
+    <p>
+        <?php
+        foreach ($messageFlash as $type=>$messages){
+            foreach ($messages as $message){
+                echo "<div class='alert alert-$type'>$message</div>";
+            }
+        }
+        ?>
+    </p>
     <?php
         require __DIR__ . "/{$cheminVueBody}";
     ?>
