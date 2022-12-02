@@ -4,7 +4,7 @@
             <div class="hidden sm:mb-8 sm:flex sm:justify-center">
                 <div class="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               <span class="text-gray-600 font-bold">
-                Mon voyage intéractif <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0"
+                Mon voyage intéractif <a href="index.php?action=formSubmit" class="font-semibold text-indigo-600"><span class="absolute inset-0"
                                                                                               aria-hidden="true"></span>Démarrer mon questionnaire <span
                               aria-hidden="true">&rarr;</span></a>
               </span>
