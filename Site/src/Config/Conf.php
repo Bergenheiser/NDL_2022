@@ -15,11 +15,11 @@ class Conf
 
     public static function getLogin() : string
     {
-        return "root";
+        return "admin";
     }
 
     public static function getPassword() : string
     {
-        return "";
+        return "password";
     }
 }

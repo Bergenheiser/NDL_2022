@@ -2,6 +2,8 @@
 
 require_once __DIR__ . "/DataBaseConnection.php";
 
+use PDOException;
+
 class ModelUser
 {
 
@@ -34,28 +36,38 @@ class ModelUser
 
     public static function selectAll(): array
     {
-        $pdo = DataBaseConnection::getPdo();
-        $query = "SELECT * FROM user;";
-        $pdoStatement = $pdo->query($query);
-        $tab = array();
-        foreach ($pdoStatement as $userTab) {
-            $tab[] = self::construire($userTab);
+        try {
+            $pdo = DataBaseConnection::getPdo();
+            $query = "SELECT * FROM user;";
+            $pdoStatement = $pdo->query($query);
+            $tab = array();
+            foreach ($pdoStatement as $userTab) {
+                $tab[] = self::construire($userTab);
+            }
+            return $tab;
+        } catch (PDOException $e) {
+            return [];
         }
-        return $tab;
+
     }
 
     public static function select(string $login): ?ModelUser
     {
-        $pdo = DataBaseConnection::getPdo();
-        $sql = "SELECT * from user WHERE login=:login";
-        $rep = $pdo->prepare($sql);
-        $rep->execute(array("login" => $login,));
-        $user = $rep->fetch();
+        try {
+            $pdo = DataBaseConnection::getPdo();
+            $sql = "SELECT * from user WHERE login=:login";
+            $rep = $pdo->prepare($sql);
+            $rep->execute(array("login" => $login,));
+            $user = $rep->fetch();
 
-        if (!$user) {
+            if (!$user) {
+                return null;
+            }
+            return static::construire($user);
+        } catch (PDOException $e) {
             return null;
         }
-        return static::construire($user);
+
     }
 
     public function sauvegarder(): bool
@@ -94,6 +106,19 @@ class ModelUser
             return false;
         }
         return true;
+    }
+
+    public static function getHashMdp(string $login) : bool|string {
+        try {
+            $pdo = DatabaseConnection::getPdo();
+            $sql = "SELECT mdpHache FROM tp_user WHERE login = :login ;";
+            $statement = $pdo->prepare($sql);
+            $statement->execute(["login" => $login]);
+            $res = $statement->fetch();
+            return !$res ? false : $res["mdpHache"];
+        } catch (PDOException $e) {
+            return false;
+        }
     }
 
 
