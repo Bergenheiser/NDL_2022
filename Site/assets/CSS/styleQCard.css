@@ -2,12 +2,15 @@
 
 .container_QCard {
     /* background-color: bisque; */
-    background-image: url("../images/background.png");
+    background-image: url('../../../assets/Images/background.png');
     width: auto;
+    height: auto;
+    padding-top: 100px;
 }
 
 .container_section {
     margin: 0 auto;
+    margin-top: 20px;
     margin-bottom: 4%;
     width: 40%;
     background-color: #FFEFE8;;
@@ -19,8 +22,6 @@
     /* color: #FFFCF1; */
     color: #000000;
 }
-
-
 
 h4 {
     text-align: center;

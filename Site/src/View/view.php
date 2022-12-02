@@ -18,13 +18,10 @@
         <?php require __DIR__. "/nav.php"; ?>
     </nav>
 </header>
-<main class="w-full">
+<main class="w-full h-full">
     <?php
         require __DIR__ . "/{$cheminVueBody}";
     ?>
 </main>
-<footer>
-
-</footer>
 </body>
 </html>
