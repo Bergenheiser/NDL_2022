@@ -15,13 +15,6 @@ class Utils
         file_put_contents($file, "");
     }
 
-    public static function afficheUser($array): void
-    {
-        echo "<p> login = " . $array['login'] . "</p>\n";
-        echo "<p> mdp = " . $array['mdp'] . "</p>\n";
-        echo "<br>";
-    }
-
     public static function afficheArray($array): void
     {
         $n = 0;
