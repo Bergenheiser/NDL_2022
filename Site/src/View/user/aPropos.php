@@ -1,7 +1,7 @@
 <div class="relative px-6 lg:px-8">
     <div class="mx-auto max-w-3xl pt-10 pb-32 sm:pt-48 sm:pb-40">
         <div>
-            <img src="../../../assets/Images/aPropos.jpg" alt="aPropos" class="w-full h-full">
+            <iframe src="../../../assets/Images/aPropos.pdf" width="100%" height="1080px"> </iframe>
             <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
                 <svg class="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem]"
                      viewBox="0 0 1155 678" fill="none" xmlns="http://www.w3.org/2000/svg">
